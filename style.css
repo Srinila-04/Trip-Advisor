@@ -1,0 +1,588 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Gabarito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.navbar1{
+    display: flex;
+    align-items: center;  /* Center items vertically */
+    justify-content: space-between;  /* Space items evenly */
+    padding: 10px 20px;
+    border-bottom: solid black 2px;
+    margin-bottom: 10px ;
+    flex-grow: 1;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.navbar__s1 {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__icon {
+    width: 18%;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar__s1 h1 {
+    font-size: 40px;
+}
+
+.navbar__s2 {
+    display: flex;
+    align-items: center;
+    position: relative; /* Position relative to allow pseudo-element inside input */
+    flex-grow: 1;
+}
+
+.navbar__s2 input {
+    width: 650px; /* Adjust input width */
+    height: 30px;
+    padding: 10px 10px 10px 40px; /* Leave space for the icon on the left */
+    border: 2px solid black;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-right: 15px;
+    background-color: transparent;
+}
+
+
+
+.navbar__s2::before {
+    content: "\f002"; /* Font Awesome Unicode for search icon */
+    font-family: "Font Awesome 5 Free"; /* Use Font Awesome */
+    font-weight: 900; /* Required for the solid style */
+    position: absolute;
+    left: 10px;
+    top: 50%; /* Vertically center the icon */
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: black;
+}
+
+.navbar__s2 input::placeholder{
+    color: black;
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.navbar__s3{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+.navbar__s3 ul{
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.navbar__s3 ul li{
+    display: inline;
+    margin-right: 25px;
+} 
+
+.navbar__s3 ul li a{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+
+.navbar__s3__box{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 12px; /* Add padding for better aesthetics */
+    text-align: center; /* Center the text inside the box */
+    display: inline-block; /* Allow width to wrap around the content */
+    font-size: 16px; /* Adjust font size if needed */
+    margin-left: 20px;
+}
+
+.navbar__s3__box:hover {
+    background-color: green; /* Optional hover effect */
+    color: white; 
+    cursor: pointer;
+}
+.navbar__s3 ul li a:before {
+    content: "\f0ac"; /* Font Awesome Unicode for globe icon */
+    font-family: "Font Awesome 5 Free"; /* Use Font Awesome */
+    font-weight: 900; /* Required for the solid style */
+    margin-right: 5px; /* Space between icon and text */
+    gap: 30px;
+}
+
+.navbar__s3 ul li:hover{
+    color: darkmagenta;
+}
+
+.navbar2{
+    font-size: 20px;
+    gap: 10px;
+}
+
+.navbar__link {
+    display: flex; /* Align links horizontally */
+    justify-content: flex-start;
+    list-style: none; /* Remove default list styling */
+}
+
+.navbar__link li {
+    margin: 0 15px; /* Space between navbar items */
+}
+
+.navbar__link a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* White color for links */
+    
+}
+
+.navbar__link a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.banner{
+    color: black; /* Text color */
+    padding: 20px 20px; /* Padding around the banner */
+    text-align: left; /* Align text in the banner to the left */
+}
+.banner p,.bannerh2{
+    text-align: left;
+    margin: 0;
+}
+
+.banner p{
+    font-size: 19px;
+    margin: 20px 0 0;
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: black;
+}
+
+.banner h2{
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.image-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.card{
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    border-radius: 10px;
+    border: solid black 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0;
+}
+
+.balloons__img{
+    height: 535px !important;
+    object-fit: cover;
+    width: 100%;
+}
+.card-content{
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    color: white;
+    z-index: 2;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 24px;
+}
+
+.card h3{
+    margin: 0;
+}
+.card:hover img{
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    animation: glitter 1.5s linear infinite; 
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%; /* Adjust the height of the vignette as needed */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none; /* Ensures it does not interfere with interactions */
+    z-index: 1;
+}
+
+@keyframes subtleGlitter {
+    0% {
+        box-shadow: 0 0 1px rgba(255, 255, 255, 0.05), 0 0 2px rgba(255, 255, 255, 0.03); /* Very low opacity */
+    }
+    50% {
+        box-shadow: 0 0 2px rgba(255, 255, 255, 0.1), 0 0 3px rgba(255, 255, 255, 0.05); /* Slightly increased for effect */
+    }
+    100% {
+        box-shadow: 0 0 1px rgba(255, 255, 255, 0.05), 0 0 2px rgba(255, 255, 255, 0.03); /* Very low opacity */
+    }
+}
+
+.card__container {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f6f0ff; /* Light purple background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.card__image{
+    margin-right: 50px;
+    flex-shrink: 0;
+}
+
+.card__image img {
+    width: 190px;
+    height: 160px;
+    border-radius: 10px; /* Rounded corners for the image */
+    object-fit: cover; /* Ensures the image covers the space */
+    transform: rotate(-8deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Content inside the card */
+.card__content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: -40px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px; /* Optional: rounded corners */
+    
+}
+
+.card__content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: black;
+    
+}
+
+.card__content p {
+    font-size: 16px;
+    color: #555; /* Darker shade for the description text */
+    margin-bottom: 10px;
+    
+}
+.button{
+    margin-bottom: 50px;
+}
+/* Button styling */
+.read__button {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    position: absolute;
+    bottom: 20px;
+    right: 20px; /* Positioned at the bottom-right corner of the card */
+    transition: background-color 0.3s ease;
+}
+
+.read__button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.card__1{
+    position: relative;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 450px;
+}
+
+.card__1 img{
+    width: 450px;
+    height: 250px;
+    border: 2px solid black;
+    border-radius: 10px; /* Rounds the corners of the border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect to the image */
+    transition: transform 0.3s;
+    margin-bottom: 50px;
+}
+
+.card__1 img:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+}
+
+.card__content__1{
+    margin-top: 10px;
+    color: black;
+    text-align: center;
+    padding: 0;
+    line-height: 1.5;
+    margin-bottom: 0;
+    
+}
+
+.card__content__1:hover{
+    text-decoration: underline;
+}
+
+.card__content__1 p, .card__content__1 h3, .card__content__1 a {
+    margin: 1px 0; /* Minimal margin between the elements */
+    padding: 0;
+    line-height: 1.3;
+}
+.image__grid{
+    display: flex;
+}
+
+.image__container img{
+    width: 350px;
+    height: 450px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.card__content{
+    text-align: left;
+    padding: 5px 5px 30px;
+    margin: 0;
+    color: black;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    font-size: 15px;
+    margin-left: 15px;
+    
+}
+
+.card__content h3{
+    margin: 0;
+}
+
+.card-footer{
+    margin: 10px;
+    padding: 0;
+    font-size: 20px;
+    margin-top: -8px;
+}
+
+.rating{
+    display: flex;
+    gap: 5px; /* Space between circles */
+    align-items: flex-start;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 1;
+    margin-top: -90px;
+    margin-left: 10px;
+}
+
+.rating__girlswalking{
+    margin-top: -90px;
+}
+
+.card__container__2{
+    display: flex;
+    align-items: flex-start;
+    background-color: #f6f0ff; /* Light purple background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.card__image__2 img{
+    width: 500px;
+    height: 500px;
+}
+
+.card__content__2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 150px;
+    line-height: 2;
+}
+
+.card__image__2{
+    margin-right: 70px;
+}
+
+.card__content__2 h2{
+    text-align: center;
+    font-size: 30px;
+}
+
+.card__content__2 p{
+    text-align: center;
+    font-size: 19px;
+}
+
+.learn__more{
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: solid black 2px;
+    cursor: pointer;
+}
+
+.learn__more:hover{
+    color:cornflowerblue;
+    background-color: antiquewhite;
+}    
+
+.footer{
+    padding: 30px;
+    background-color: grey;
+    color: black;
+}
+.footer__one{
+    display: flex;
+    gap: 10px;
+}
+
+.footer__one p:hover{
+    color: #555;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer__one p{
+    margin: 20px;
+}
+
+.footer__two{
+    font-size: small;
+    cursor: pointer;
+}
+
+.footer__two__s1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    width: 25%;
+    position: relative;
+    left: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.footer__two__s1 p{
+    margin-top: 18px;
+}
+
+.footer__two__s1 img{
+    height: 60px;
+    width: 60px;
+}
+
+.footer__two__s2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+    gap: 10px;
+    position: relative;
+    left: 70px;
+    bottom: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footer__two__s2 p{
+    margin-left: 20px;
+    font-size: 19px;
+}
+
+.footer__two__s2 p:hover{
+    color: #555;
+}
+.footer__two__s3 p{
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+.footer__two__s4{
+    display: flex;
+    position: relative;
+    left: 1000px;
+    bottom: 80px;
+    gap: 20px;
+    cursor: pointer;  
+}
+
+.footer__two__s4 select{
+    margin-right: 40px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.footer__two__s4 select:hover{
+    background-color:bisque;
+    color: black;
+}
+.footer__two__s5{
+    display: flex;
+    position: relative;
+    left: 1175px;
+    bottom: 70px;
+    font-size: x-large;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.footer__two__s5 i:hover{
+   color: aquamarine;
+}
+
+
