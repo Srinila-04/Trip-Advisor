@@ -137,6 +137,10 @@ body {
     gap: 10px;
 }
 
+.navbar3{
+    display: none;
+}
+
 .navbar__link {
     display: flex; /* Align links horizontally */
     justify-content: flex-start;
@@ -585,4 +589,15 @@ body {
    color: aquamarine;
 }
 
+@media screen and (max-width:800px) {
+    font-size: 9px;
+}
 
+@media  screen and (max-width:600px) {
+    .navbar__s2,.navbar__s3{
+        display: none;
+    }
+    .navbar3{
+        display: block;
+    }
+}
